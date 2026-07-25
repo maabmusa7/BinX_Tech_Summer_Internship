@@ -35,5 +35,5 @@
 - dealing with git commands through the terminal. 
 
 ## **📁 Related Files:** 
-- [`Notebook1.ipynb`](./Day01.ipynb)
+- [`Notebook1.ipynb`], [`requirements.txt`]
 
