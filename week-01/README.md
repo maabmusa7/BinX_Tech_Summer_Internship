@@ -17,7 +17,7 @@
 ----
 
 ## 📝Overview
-Week 1 covered the foundational stack for data work in Python setting up a reproducible environment, core Python syntax and OOP, then progressively layering in **NumPy** for numerical computing, **Pandas** for tabular data, and **Matplotlib** for visualization - culminating in an end-to-end min-notebook that loads, cleans, analyzees, and visualizes a real dataset.
+Week 1 covered the foundational stack for data work in Python setting up a reproducible environment, core Python syntax and OOP, then progressively layering in **NumPy** for numerical computing, **Pandas** for tabular data, and **Matplotlib** for visualization - culminating in an end-to-end mini-notebook that loads, cleans, analyzes, and visualizes a real dataset.
 
 ## Structure
 
