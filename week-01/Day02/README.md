@@ -37,5 +37,5 @@
 - Debugging and avoiding syntax errors.
 
 ## **📁 Related Files:** 
-- [`Notebook2.ipynb`](../Notebook2.ipynb)
+- [`Notebook2.ipynb`]
 
