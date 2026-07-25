@@ -14,7 +14,7 @@
 - [x] Load and clean a provided dataset with Pandas (handling any missing values).
 - [x] Use NumPy to compute at least one derived numeric feature or summary statistic.
 - [x] Produce at least three labeled plots (including a histogram and a scatter plot) exploring the data.
-- [ ] Write Markdown cells explaining what each visualization reveals about the data.
+- [x] Write Markdown cells explaining what each visualization reveals about the data.
 - [x] Commit the finished notebook and its requirements.txt to GitHub with a clear commit message.
       
 ### **🧩 What i did:**
