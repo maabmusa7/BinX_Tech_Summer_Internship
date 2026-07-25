@@ -36,4 +36,4 @@
 - None.
   
 ### **📁 Related Files:** 
-- [`Notebook3.ipynb`](./Day03/Notebook3.ipynb)
+- [`Notebook3.ipynb`]
