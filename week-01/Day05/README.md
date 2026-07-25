@@ -36,6 +36,6 @@
 - Handling complicated queries correctly.
   
 ### **📁 Related Files:** 
-- [`Notebook5.ipynb`]
+- [`Notebook5.ipynb`], [requirements.txt`]
 
 
