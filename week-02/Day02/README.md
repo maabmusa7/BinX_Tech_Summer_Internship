@@ -1,6 +1,6 @@
 <div align="center">
 
-# Day 01 - Probability & Distributions
+# Day 02 - Probability & Distributions
 
 *Monday, July 27, 2026*
 
