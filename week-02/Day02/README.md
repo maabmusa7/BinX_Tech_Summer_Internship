@@ -4,7 +4,7 @@
 
 *Monday, July 27, 2026*
 
-[← Previous Day](../Day01/README.md) ·[ Next Day →](../Day02/README.md)
+[← Previous Day](../Day01/README.md) ·[ Next Day →](../Day03/README.md)
 </div>
 
 ---
