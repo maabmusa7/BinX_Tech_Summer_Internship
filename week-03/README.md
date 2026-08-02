@@ -7,15 +7,16 @@
 - [Day 01 — Supervised Learning Concepts & the Scikit-learn API](#day-01---Supervised-Learning-Concepts-&-the-Scikit--learn-API)
 
 
-*TBW*
+*...*
 
 </div>
 
 ----
 
 ## 📝Overview
+   ...
+
    
-   ---
 
 ## Structure
 
@@ -57,7 +58,7 @@
 |---|---|---|---|---|
 | 01 | Aug 2 | Supervised Learning Concepts & the Scikit-learn API | Supervised Learning, Regression & Classification, Features & Target, Scikit_learn API | [Day01 →](./Day01/README.md) |
 | 02 | Aug 3 | Linear Regression | ... | [Day02 →](./Day02/README.md) |
-| 03 | Aug 4 | ... | [Day03 →](./Day03/README.md) |
+| 03 | Aug 4 | Logistic Regression & Classification Metrics | ... | [Day03 →](./Day03/README.md) |
 | 04 | Aug 5 | Trees, Forests, SVMs & k-NN | ... | [Day04 →](./Day04/README.md) |
 | 05 | Aug 6 | Supervised-Learning Mini-Project | ... | [Day05 →](./Day05/README.md) |
 
