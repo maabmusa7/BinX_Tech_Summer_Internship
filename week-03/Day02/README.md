@@ -9,7 +9,7 @@
 
 ---
 
-## **✅ Tasks**
+## **Tasks**
 
 - [x] Train a LinearRegression model on a provided regression dataset (e.g. house prices).
 - [x] Report the model's coefficients and identify which feature has the strongest effect.
@@ -18,24 +18,24 @@
 model adds value.
 - [x] Document the interpretation of results in Markdown.
 
-## **🧩 What i did:**
+## **What i did:**
 - Reviewed week 3 materials & resources. 
 - researched about linear regression.
 - Completed assigned tasks. 
 
-## **📚 Materials Used:**
+## **Materials Used:**
 - Week3, day 2 materials.
 - Youtube: Linear Regression in Machine Learning | Linear Regression Tutorial [With Project] | Intellipaat
 - Geeksforgeeks
   
 
-## **📖 What i learned:**
+## **What i learned:**
 - What is linear regression.
 - Training, predicting and interpreting coefficients with scikit.
 - Regression metrics.
 
-## **🚧 Challenges:**
+## **Challenges:**
 - Interpreting coefficients. 
 
-## **📁 Related Files:
+## **Related Files:
 [`Notebook3.2.ipynb`]
