@@ -16,26 +16,26 @@
 - [x] Decide whether precision or recall matters more for this specific problem and justify it.
 - [x] Compute the AUC-ROC and document what it says about the model.
 
-## **What i did:**
+## **What I did :**
 - Reviewed week 3 materials & resources. 
 - Completed assigned tasks.
 - Researched about logistic regression.
 
-## **Materials Used:**
+## **Materials Used :**
 - Week3, day 3 materials.
 - Youtube : Logistic Regression in Machine Learning: The Easiest Explanation Ever! | ML Tutorial | Intellipaat.
 - Geeksforgeeks.
   
 
-## **What i learned:**
+## **What I learned :**
 - Classification through logistic regression.
 - Accuracy.
 - Confusion Matrix.
 - Precision, Recall and F1.
 - AUC - ROC.
 
-## **Challenges:**
+## **Challenges :**
 - Interpreting the results. 
 
-## **Related Files:**
+## **Related Files :**
 [`Notebook3.3.ipynb`]
