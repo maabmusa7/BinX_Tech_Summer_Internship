@@ -74,4 +74,8 @@
 | 05 | Aug 6 | Supervised-Learning Mini-Project | Full Supervised-Learning Pipeline, Basic Preprocessing, Choosing the right Model/Metric, Documenting the Result | [Day05 →](./Day05/README.md) |
 
 ## 🎯Key Takeaways
-- ....
+- Learned Scikit-learn API and fundamentals od supervised learning.
+- Distinguishing between regression and classification.
+- Built, Interpreted and evaluated Linear Regression and Logistic Regression Models.
+- Compared the performance of Decision Trees, Random Forests SVMs and k-NN to understand their tradeoffs on the same dataset.
+- Completed a full pipeline Supervised Learning mini-project - from data processing and exploring through model/metric selection to documenting results and evaluating models against a baseline.
