@@ -35,7 +35,7 @@
 - Selecting the right model and metric for a dataset.
 - Evaluating and comparing models' performance.
 
-## **🚧 Challenges:**
+## **Challenges:**
 - Combining all the previous weeks and days knowledge in one Project. 
 
 ## **Related Files:**
