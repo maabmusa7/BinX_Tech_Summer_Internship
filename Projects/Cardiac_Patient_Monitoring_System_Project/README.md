@@ -2,21 +2,22 @@
 ### Predicting Heart Disease Risk with Machine Learning
 
 ## Table of Contents
-- [Overview](#-overview)
-- [Dataset](#-dataset)
-- [Project Workflow](#-project-workflow)
-- [Data Preparation](#-data-preparation)
-- [Exploratory Data Analysis](#-exploratory-data-analysis)
-- [Models & Results](#-models--results)
-- [Feature Engineering & Pipeline](#-feature-engineering--pipeline)
-- [Key Findings](#-key-findings)
-- [Limitations](#-limitations)
-- [How to Run](#-how-to-run)
-- [Project Structure](#-project-structure)
-- [Tech Stack](#-tech-stack)
+- [Overview](#overview)
+- [Dataset](#dataset)
+- [Project Workflow](#project-workflow)
+- [Data Preparation](#data-preparation)
+- [Exploratory Data Analysis](#eda)
+- [Models & Results](#models-results)
+- [Feature Engineering & Pipeline](#feature-engineering)
+- [Key Findings](#key-findings)
+- [Limitations](#limitations)
+- [How to Run](#how-to-run)
+- [Project Structure](#project-structure)
+- [Tech Stack](#tech-stack)
 
 ---
 
+<a name="overview"></a>
 ## Overview
 
 This project aims to build a machine learning analysis project on a synthetic **cardiac patient dataset**, covering the full data science lifecycle:
@@ -31,6 +32,8 @@ The goal: identifying which factors; demographic, clinical or lifestyle, are mos
 
 ---
 
+
+<a name="dataset"</a>
 ## Dataset
 | Topic | Description |
 | --- | --- |
@@ -53,6 +56,8 @@ The goal: identifying which factors; demographic, clinical or lifestyle, are mos
 
 ---
 
+
+<a name="project-workflow"</a>
 ## Project Workfolw
 
 ```
@@ -63,6 +68,8 @@ Data Loading → Cleaning → EDA, Baseline Model → Model Comparison → Cross
 
  ---
 
+
+<a name="data-preparation"</a>
  ## Data Preparation 
  - Checked for missing values, duplicates and invalid ranges 
  - `Alchohol_Intake` had **40% missing values** - rather than dropping the column or guessing values, missing entries were labeled `"unknkown"` as their own category, preserving the full dataset without introducing bias.
@@ -70,6 +77,8 @@ Data Loading → Cleaning → EDA, Baseline Model → Model Comparison → Cross
 
 ---
 
+
+<a name="eda"</a>
 
 ## Exploratory Data Analysis
 - Structural checks (shape, types, missing values, duplicates)
@@ -86,6 +95,8 @@ Data Loading → Cleaning → EDA, Baseline Model → Model Comparison → Cross
 
 ---
 
+
+<a name="models-results"</a>
 ## Models & Results
 
 Two classifiers were trained and evaluated using an 80/20 **stratifies** train/test split and **5-fold cross-validation**:
@@ -113,6 +124,10 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 
 *Full confusion matrices and classification reports are in the notebook.*
 
+---
+
+
+<a name="feature-engineering"</a>
 ## Feature Engineering & Pipeline
 
 | Decision | Rationale |
@@ -125,13 +140,17 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 
 ---
 
+
+<a name="key-findings"</a>
 ## Key Findings
 - Age, Colestrol_Total, Diabetes, Hypertensionand Previous_Heart_Attaks emerged as the strongest perdictors of `Heart_Disease`, consistent with established cardiac risk factors.
 - The dataset's class balance meant no resampling or class-weighting was necessary
 - Feature engineering *improved* model performance while simplifying the feature set
-- Random Forest's perfect test score is an artefact of the synthetic dataset's likely rule-based generation, not genuine superiority
+- Random Forest's perfect test score is an artifact of the synthetic dataset's likely rule-based generation, not genuine superiority
+
 ---
 
+<a name="final-summary"</a>
 ## Final Results Summary
 - **Recommended model:** Logistic Regression, despite Random Forest's higher raw scores (reasoning above).
 - **Top predictive features:** `Age`, `Cholesterol_Total`, `Hypertension`, `Diabetes`,`Previous_Heart_Attack`.
@@ -141,6 +160,7 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 
 ---
 
+<a name="limitations"</a>
 ## Limitations
 - Dataset is **synthetic** - real-world clinical data is typically noisier, so performance may not directly generalise.
 - `Alcohol_Intake` had substantial missing data, imputed as "unknown" rather than a statistically derived value.
@@ -150,6 +170,7 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 
 ---
 
+<a name="how-to-run"</a>
 ## How to Run
 
 ```bash
@@ -171,6 +192,7 @@ The notebook runs end to end with no manual/hidden steps required.
 
 ---
 
+<a name="project-structure"</a>
 ## Project Structure
 
  
@@ -185,6 +207,7 @@ The notebook runs end to end with no manual/hidden steps required.
 
 ---
 
+<a name="tech-stack"</a>
 ## Tech Stack
 
 Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Jupyter Notebook
