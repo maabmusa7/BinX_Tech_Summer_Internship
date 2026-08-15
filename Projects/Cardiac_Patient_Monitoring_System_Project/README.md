@@ -1,4 +1,5 @@
-# Cardiac Patient Monitoring System - Heart Disease Presdiction
+# Cardiac Patient Monitoring System - Heart Disease Prediction
+### Predicting Heart Disease Risk with Machine Learning
 
 ## Project Objective
   This project analyses a synthetic heart disease dataset to explore factors associated with cardiac risk and build supervised classification models to. predict heart disease presence. The workflow includes data cleaning, exploratory data analysis, baseline and comparison classifiers, model evaluation and reusable feature engineering pipeline.
