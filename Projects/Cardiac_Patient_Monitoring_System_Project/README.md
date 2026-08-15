@@ -146,6 +146,15 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 
 ## Project Structure
 
+ 
+    data
+        synthetic_heart_disease_dataset.csv
+    notebooks
+        Cardiac_Patient_Monitoring_System_Project.ipynb
+    outputs
+        plots, confusion matrices, result summaries
+    requirements.txt
+    README.md
 
 ---
 
