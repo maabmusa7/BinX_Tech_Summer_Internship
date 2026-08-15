@@ -18,6 +18,7 @@
 ---
 
 ## Overview
+
 This project aims to build a machine learning analysis project on a synthetic **cardiac patient dataset**, covering the full data science lifecycle:
 
 - Data cleaning.
@@ -26,7 +27,7 @@ This project aims to build a machine learning analysis project on a synthetic **
 - Evaluation using cross-validation and classification metrics.
 - Feature engineering wrapped in a reusable Scikit-learn `Pipeline`.
 
- The goal: identifying which factors; demographic, clinical or lifestyle, are most associated with heart disease and building a reliable model that helps predicting those factors.
+The goal: identifying which factors; demographic, clinical or lifestyle, are most associated with heart disease and building a reliable model that helps predicting those factors.
 
 ---
 
@@ -41,13 +42,14 @@ This project aims to build a machine learning analysis project on a synthetic **
 | **Class Balance** | 53.7% No Disease / 46.3% Disease (well balanced) |
 
 **Feature categories:**
+
 | Category | Columns |
 | --- | --- |
 | Demographic | Age, Gender |
 | Anthropometric | BMI *(weight, Height dropped)* |
 | Lifestyle | Smoking, Alcohol_Intake, Physical_Activity, Diet, Stress_Level |
 | Diagnosed Conditions | Diabetes, Hyperlipidemia, Family_History, Previous_Heart_Attack |
-| Clinical Measurements | Systolic_BP, Diastolic_BP, Heart_Rate, Blood_Sugar_Fasting, Cholestrol_Total, Pulse_Pressure |
+| Clinical Measurements | Systolic_BP, Diastolic_BP, Heart_Rate, Blood_Sugar_Fasting, Cholestrol_Total, Pulse_Pressure (engineering) |
 
 ---
 
@@ -56,12 +58,13 @@ This project aims to build a machine learning analysis project on a synthetic **
 ```
 Data Loading → Cleaning → EDA, Baseline Model → Model Comparison → Cross-Validation & Evaluation → Feature Engineering → Pipeline
 ```
+
  Each stage was completed and reviewed as a discrete milestone before moving to the next, ensuring a disciplined, reproducible process from raw Dara to final model.
 
  ---
 
  ## Data Preparation 
- - Checked fro missing values, duplicates and invalid ranges 
+ - Checked for missing values, duplicates and invalid ranges 
  - `Alchohol_Intake` had **40% missing values** - rather than dropping the column or guessing values, missing entries were labeled `"unknkown"` as their own category, preserving the full dataset without introducing bias.
  - Binary columns (e.g. `Hypertension`) were explicitly treated as **categorical**, not continuous, despite their numeric data type.
 
@@ -91,17 +94,18 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 
 | Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| Logistic Regression | 0.923 |  |  |  |  |
-| Random Forest | 1.0 |  |  |  |  |
+| Logistic Regression | 0.9237 | 0.9178 | 0.9176 | 0.1977 | 0.9822 |
+| Random Forest | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 |
 
 ### Final (post-feature engineering, via Pipeline)
 
 | Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| Logistic Regression | 0.923 |  |  |  |  |
-| Random Forest | 1.0 |  |  |  |  |
+| Logistic Regression | 0.923 | 0.9178 | 0.9176 | 0.1977 | 0.9822 |
+| Random Forest | 1.0 | 1.0 | 1.0 | 1.0 | 1.0 |
 
-**Best model**: `Pipeline` - N/A
+
+**Best model**: `Logistic Regression` - 92% accuracy is not attributable to reverse-engineering the data's generation rule, making it the more trustworthy and generalisable result. See [Key Findings](#-key-findings) for the full reasoning.
 
 **Confusion matric interpretation:**
 - **False Positives** → healthy patients flagged as at-risk (unnecessary follow-up
@@ -125,7 +129,15 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 - Age, Colestrol_Total, Diabetes, Hypertensionand Previous_Heart_Attaks emerged as the strongest perdictors of `Heart_Disease`, consistent with established cardiac risk factors.
 - The dataset's class balance meant no resampling or class-weighting was necessary
 - Feature engineering *improved* model performance while simplifying the feature set
-- Random Forest outperformed the baseline, making it preferred  choice for this use case.
+- Random Forest's perfect test score is an artefact of the synthetic dataset's likely rule-based generation, not genuine superiority
+---
+
+## Final Results Summary
+- **Recommended model:** Logistic Regression, despite Random Forest's higher raw scores (reasoning above).
+- **Top predictive features:** `Age`, `Cholesterol_Total`, `Hypertension`, `Diabetes`,`Previous_Heart_Attack`.
+- **Key limitations flag in any real-world application:** this dataset is synthetic, and a perfect classifier is not a realistic outcome to expect on genuine patient data - any deployment on real clinical data would need revalidation, likely with nosier, less separable results.
+- **Process discipline:** every stage was completed and reviewed as a distinct milestone before proceeding to the next, with findings documented at each step.
+
 
 ---
 
@@ -134,13 +146,28 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 - `Alcohol_Intake` had substantial missing data, imputed as "unknown" rather than a statistically derived value.
 - No hyperparameter tuning was performed beyond default model settings.
 - Deep learning, clinical diagnoses and unsupervised analysis were beyond the project's scope.
+- **Random Forest achieved a perfect 100% test score**, which is very unlikely on genuine clinical data. This points to the synthetic  dataset encoding a near-deterministic rule around a small set of features.
 
 ---
 
 ## How to Run
 
+```bash
+# 1. Clone this repository
+git clone [your-repo-url]
+cd [repo-name]
+
+# 2. Install dependencies
+pip instal -r requirements.txt
+
+# 3. Add the dataset
+# Place synthetic_heart_disease_dataset.csv into the data/ folder
+
+# 4. Launch and run the notebook top to bottom
+Jupyter notebook notebooks/Cardiac_Patient_Monitoring_System.ipynb
 ```
-```
+
+The notebook runs end to end with no manual/hidden steps required.
 
 ---
 
