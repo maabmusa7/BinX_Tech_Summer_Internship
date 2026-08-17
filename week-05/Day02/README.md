@@ -35,5 +35,5 @@ count.
 ## **Challenges:**
 - Choosing the right clusteringmethod. 
 
-## **Related Files:
+## **Related Files:**
 [`Notebook5.2.ipynb`]
