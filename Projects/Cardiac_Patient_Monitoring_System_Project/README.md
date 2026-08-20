@@ -9,6 +9,7 @@
 - [Exploratory Data Analysis](#eda)
 - [Models & Results](#models-results)
 - [Feature Engineering & Pipeline](#feature-engineering)
+- [Unsupervised Learning](#unsupervised-learning)
 - [Key Findings](#key-findings)
 - [Limitations](#limitations)
 - [How to Run](#how-to-run)
@@ -53,6 +54,7 @@ The goal: identifying which factors; demographic, clinical or lifestyle, are mos
 | Lifestyle | Smoking, Alcohol_Intake, Physical_Activity, Diet, Stress_Level |
 | Diagnosed Conditions | Diabetes, Hyperlipidemia, Family_History, Previous_Heart_Attack |
 | Clinical Measurements | Systolic_BP, Diastolic_BP, Heart_Rate, Blood_Sugar_Fasting, Cholestrol_Total, Pulse_Pressure (engineering) |
+
 
 ---
 
@@ -140,6 +142,58 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 
 ---
 
+## Unsupervised Learning
+
+Beyond predicting `Heart_Disease`, an unsupervised exploration was performed on the scaled numeric features - excluding the target - to check wether natural patient groupings exist in the data independent of the diagnosis label.
+
+### Clustering Comparison
+
+Three clustering methods were compared on the same scaled feature set:
+
+| Model | Parameters | Clusters Found | Noise Points | Silhouette Score |
+| --- | --- | :---: | :---: | :---: |
+| K-Means | K=2 - chosen via silhouette | 2 | - | 0.156 |
+| DBSCAN | eps=0.9, min_samples=5 | 7 | 746 | -0.150 |
+| Hierarchical (ward, sampled) | cut height = 18 | 9 | - | 0.066 |
+
+> **Weak clusters across all three methods.*** Silhouette score stayed low throughout (K-Mean
+>  best at 0.156), and the hierarchical dendrogram showed no strongly separated branches. This
+>  suggests that the dataset's patients vary forming a **continuum** of clinical/lifestyle
+> features rather than forming  distinct seperable subgroups or clear population clusters.
+
+### Dimensionality Reduction - PCA
+
+| | |
+|---|---|
+| **Original Dimensions** | 8 |
+| **Components needed for ≥ 95% variance***| 7 |
+| **Variance retained** | ~99.9% |
+
+Reducing from 8 numeric dimensions to 7  to retain 95%+ variance is a modest compression - reinforcing the clustering finding above: variation in this dataset is spread fairly evenly across most clinical measurements rather than being dominated by one or two  underlying factors.
+
+
+### PCA vs. t-SNE
+
+| PCA | t-SNE |
+|---|---|
+| Non-Linear | Non-linear , preserves local structure  |
+| No clear group seperation | No clear group separation |
+
+Both visualisations agree: heart disease outcomes in this dataset appear driven by **overlapping combinations of features**, not distinct, superb;e patient groups.
+
+### Anomaly Detection - Isolation Forest
+
+`2500` points of the dataset (5%) were flagged as anomalies.
+
+| Anomaly | Hypothesis |
+|---|---|
+| **Anomaly 1** | Multiple major risk factors simultaneouslycombined with extremely high pulse pressure - rare relative to most records  |
+| **Anomaly 2** | Unusually high Systolic &Diastolic BP alongside the elevated heart rate|
+
+*Full cluster visualizations, dendogram, PCA/t-SNE plots and anomaly detail are available in the updated notebook*
+
+---
+
 
 <a name="key-findings"</a>
 ## Key Findings
@@ -165,7 +219,7 @@ Two classifiers were trained and evaluated using an 80/20 **stratifies** train/t
 - Dataset is **synthetic** - real-world clinical data is typically noisier, so performance may not directly generalise.
 - `Alcohol_Intake` had substantial missing data, imputed as "unknown" rather than a statistically derived value.
 - No hyperparameter tuning was performed beyond default model settings.
-- Deep learning, clinical diagnoses and unsupervised analysis were beyond the project's scope.
+- Deep learning, clinical diagnoses and production deployment were beyond the project's scope.
 - **Random Forest achieved a perfect 100% test score**, which is very unlikely on genuine clinical data. This points to the synthetic  dataset encoding a near-deterministic rule around a small set of features.
 
 ---
