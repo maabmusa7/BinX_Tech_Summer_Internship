@@ -11,12 +11,12 @@
 
 ## **Tasks**
 - [x] Update the Cardiac Patient Monitoring System Project with Unsupervised Learning parts.
-- [ ] Review the six project options with your mentor and select one based on your strengths and
+- [x] Review the six project options with your mentor and select one based on your strengths and
 interests.
-- [ ] Create the Sprint 1 backlog (dataset selection, EDA, baseline model) with written acceptance
+- [x] Create the Sprint 1 backlog (dataset selection, EDA, baseline model) with written acceptance
 criteria per task.
-- [ ] Define the Sprint 1 goal and get mentor sign-off before any Phase 3 work begins.
-- [ ] Set up the project GitHub repository with a README skeleton and a feature-branch workflow.
+- [x] Define the Sprint 1 goal and get mentor sign-off before any Phase 3 work begins.
+- [x] Set up the project GitHub repository with a README skeleton and a feature-branch workflow.
 
 ## **What i did:**
 - Reviewed week 5 materials & resources. 
