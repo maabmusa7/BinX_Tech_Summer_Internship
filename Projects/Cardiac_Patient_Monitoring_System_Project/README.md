@@ -169,7 +169,7 @@ Three clustering methods were compared on the same scaled feature set:
 | **Components needed for ≥ 95% variance***| 7 |
 | **Variance retained** | ~99.9% |
 
-Reducing from 8 numeric dimensions to 7  to retain 95%+ variance is a modest compression - reinforcing the clustering finding above: variation in this dataset is spread fairly evenly across most clinical measurements rather than being dominated by one or two  underlying factors.
+Reducing from 8 numeric dimensions to 7  to retain 95%+ variance is a modest compression - reinforcing the clustering finding above: variation in this dataset is spread evenly across most clinical measurements rather than being dominated by one or two  underlying factors.
 
 
 ### PCA vs. t-SNE
