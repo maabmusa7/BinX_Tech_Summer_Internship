@@ -71,4 +71,51 @@ Week 6 introduced neural networks from first principles before moving into a pro
 - Tuning hyperparameters one at a time to isolate which change actually drives improvement, and using EarlyStopping to avoid picking an arbitrary final epoch.
 - Closing a sprint properly: assembling evidence, documenting architecture and results, and running the full PR review → merge → retrospective cycle.
 
+
+# Sprint 1 Review — Cardiac Risk Prediction Project
+
+## Sprint Goal
+Establish a working baseline for predicting heart disease risk from the CDC BRFSS survey dataset, then determine whether increasingly complex models (Random Forest, Neural Network) could meaningfully improve on that baseline.
+
+## What Was Delivered
+- **EDA & cleaning**: identified and removed 18,078 duplicate rows (~5.7%), confirmed no missing values, flagged data-quality issues (BMI outlier of 94.85, implausible SleepTime values).
+- **Baseline model**: Logistic Regression with `class_weight="balanced"` — **ROC-AUC 0.832**.
+- **Comparison model**: Random Forest, both untuned and lightly tuned — **ROC-AUC 0.791**, underperforming the linear baseline.
+- **Neural network**: Keras Sequential network (37 → 32 → 16 → 1), tuned via systematic one-hyperparameter-at-a-time comparison (dropout, learning rate, network size), trained with EarlyStopping — **ROC-AUC 0.832–0.836** across variants.
+- **Unsupervised exploration**: K-Means, DBSCAN, hierarchical clustering, PCA, t-SNE, and Isolation Forest, used to understand structure in the data independent of the target label.
+
+## Key Result
+
+| Model | ROC-AUC |
+|---|---|
+| Logistic Regression (baseline) | 0.832 |
+| Random Forest | 0.791 |
+| Neural Network (best variant) | 0.836 |
+| Neural Network (tuned + EarlyStopping) | 0.832 |
+
+Every model — regardless of complexity — converged to essentially the same ~0.83 ROC-AUC ceiling. This is the headline finding of the sprint: **the predictive signal in this dataset is largely linear**, and increasing model complexity did not unlock meaningfully better performance.
+
+## What This Means Going Forward
+Future performance gains are more likely to come from **better features** (interaction terms, external data sources, more granular risk scoring) than from more sophisticated model architectures — a concrete, evidence-backed direction for Sprint 2 rather than defaulting to "try a bigger model."
+
+## Sprint 1 Retrospective
+
+**What went well:**
+- Systematic, one-variable-at-a-time hyperparameter testing isolated dropout as the single most impactful lever, rather than guessing at combined changes.
+- Refactoring manual preprocessing into a Scikit-learn `Pipeline` + `ColumnTransformer` eliminated an entire category of bugs (variable name collisions, out-of-order execution) that had repeatedly caused issues earlier in the sprint.
+
+**What was challenging:**
+- Small naming/typo bugs ( e.g## Sprint 1 Retrospective
+
+**What went well:**
+- Systematic, one-variable-at-a-time hyperparameter testing isolated dropout as the single most impactful lever, rather than guessing at combined changes.
+- Refactoring manual preprocessing into a Scikit-learn `Pipeline` + `ColumnTransformer` eliminated an entire category of bugs (variable name collisions, out-of-order execution) that had repeatedly caused issues earlier in the sprint.
+
+**What was challenging:**
+- Small naming/typo bugs (e.g. `keras,optimizers`, `Sex` mapped with the wrong dictionary) caused repeated debugging cycles throughout the sprint — several hours were spent tracing errors back to single-character typos.
+
+**One concrete change for Sprint 2:**
+Before running any multi-cell pipeline or multi-model comparison loop, do a fast "smoke test" first — run the exact same code with `epochs=2` (or an equivalent minimal setting) to catch typos and shape errors in seconds rather than after a full, slow training run. This would have caught most of this sprint's bugs immediately instead of after multi-minute training cycles.
+
+
 </div>
