@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📊 Week 06 — NEURAL NETWORKS: FOUNDATIONS TO DEPLOYMENT
+# 📊 Week 06 — DEEP LEARNING INTRO - SPRINT 1
 
 *Week 6 moved from classical ML baselines into neural networks — understanding how a network computes, trains, and improves, then closing the sprint with a fully evaluated, tuned, and documented model.*
 
