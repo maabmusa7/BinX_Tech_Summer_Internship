@@ -12,10 +12,8 @@
 ## **Tasks**
 - [x] Confirm and justify the core architecture for the project based on its data type.
 - [x] Train and tune the improved core model, logging each experiment's config and metric.
-- [x]Assemble a metric table comparing the Sprint 2 model to the Week 6 baseline and the Sprint 1
-network.
-- [x] Ensure all Sprint 2 work is committed, the pull request is merged after mentor approval, and the
-notebook is documented.
+- [x] Assemble a metric table comparing the Sprint 2 model to the Week 6 baseline and the Sprint 1 network.
+- [x] Ensure all Sprint 2 work is committed, the pull request is merged after mentor approval, and the notebook is documented.
 - [x] Present the Sprint Review, then write the Retrospective with one concrete change for Sprint 3.
 
 ## **What i did:**
