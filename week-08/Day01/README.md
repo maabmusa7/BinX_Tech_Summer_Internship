@@ -22,9 +22,10 @@ choices in Markdown.
 - Planned Sprint 3.
 - Completed assigned tasks
 
-## **Materials Used:**
+## **Material Used:**
 - Week 7, day 1 material.
 - [Reference for Deep Learning with additional topics to read :](https://deeplearningwithpython.io/chapters/)
+- https://medium.com/@abi12subramaniam/ultimate-guide-to-nlp-tokenization-stemming-lemmatization-stop-words-pos-tagging-and-named-fd48819b5281
 - Geeksforgeeks
 - Claude
 
