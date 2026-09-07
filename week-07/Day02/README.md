@@ -1,7 +1,7 @@
 <div align="center">
 
 # Day 02 -  Building CNNs & Transfer Learning
-*Monday, August 32, 2026*
+*Monday, August 31, 2026*
 
 [← Previous Day](../Day01/README.md) ·[ Next Day →](../Day03/README.md)
 </div>
