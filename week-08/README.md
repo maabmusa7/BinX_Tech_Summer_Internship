@@ -4,11 +4,14 @@
   <img src="https://img.shields.io/badge/Explainability-SHAP-blueviolet?style=for-the-badge&logo=mlflow&logoColor=white" alt="Explainability Badge" />
   <img src="https://img.shields.io/badge/Compute-Google_Colab_GPU-red?style=for-the-badge&logo=googlecolab&logoColor=white&color=f9ab00" alt="GPU Badge" />
   <br />
+  
   # 🚀 BinX Tech AI & ML Internship Program
   ## 📊 Week 08 — NLP & COMPUTER VISION — SPRINT 3
  
   ---
+  
 </div>
+
 ## 🌟 Sprint Executive Summary
 Sprint 3 moved the capstone news classifier from a trained model into a fully integrated, explainable, and evaluated pipeline, while building parallel NLP and Computer Vision preprocessing skills. The sprint opened with **text preprocessing and representation** (tokenization, cleaning, TF-IDF, and word embeddings), pivoted into **image preprocessing** for a second dataset (bag classification), and closed by wrapping the DistilBERT capstone model into a single **end-to-end `predict()` pipeline**, complete with a **confusion matrix**, **misclassified-example error analysis**, and **SHAP explainability**.
  
@@ -33,6 +36,7 @@ Key milestones include:
 Sprint 3 focused on integration and evaluation rather than new model architectures. Day 1 revisited **why raw text needs cleaning** before it can be vectorized, building a lowercase → punctuation-removal → stopword-removal → lemmatization pipeline and explicitly verifying it preserved task-critical signal for a topic-classification task. Day 2 converted that cleaned text into numeric form via two families of representation — frequency-based **TF-IDF** and meaning-based **word embeddings** — establishing a fast, interpretable baseline against the project's existing deep learning models. Day 3 shifted to a second, image-based dataset, applying the same "preprocessing before modeling" discipline via OpenCV and Keras augmentation tools. Day 4 tied everything together: the trained DistilBERT model and its tokenizer were wrapped into a single, deployable `predict()` function, with explicit checks to guarantee no training/serving skew. Day 5 closed the sprint with a full, metrics-driven evaluation against baseline and SHAP-based explainability, preparing the model for Sprint 4 deployment.
  
 ## Repository Directory Structure
+
     Week08
         README.md
         Day01
