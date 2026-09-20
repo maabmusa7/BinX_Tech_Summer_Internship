@@ -1,6 +1,6 @@
 <div align="center">
 
-# Day 02 -  Text Representation: TF-IDF & Embeddings
+# Day 02 -  Serving the Model with FastAPI
 *Monday, September 13, 2026*
 
 [← Previous Day](../Day01/README.md) ·[ Next Day →](../Day03/README.md)
